@@ -1,7 +1,10 @@
-package Root.Modules.OrderModel.database.entity;
+package Root.modules.OrderModel.database.entity;
 
+import java.util.List;
 import java.util.UUID;
 
+import Root.modules.ItemModel.database.entity.ItemModel;
+import Root.modules.UserModel.database.entity.UserModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -23,6 +26,13 @@ public class OrderModel {
     @Column(length = 50, nullable = false, name = "order_name")
     private String name;
 
+    @ManyToOne
+    @JoinColumn(name = "id_user", nullable = false)
+    private UserModel user;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_order")
+    private List<ItemModel> items;
 
 }
 
