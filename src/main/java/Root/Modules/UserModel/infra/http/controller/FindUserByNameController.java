@@ -1,7 +1,7 @@
-package Root.Modules.UserModel.infra.http.controller;
+package Root.modules.UserModel.infra.http.controller;
 
-import Root.Modules.UserModel.database.entity.UserModel;
-import Root.Modules.UserModel.domain.services.FindUserByName;
+import Root.modules.UserModel.database.entity.UserModel;
+import Root.modules.UserModel.domain.services.FindUserByName;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1")
-public class FindByNameController {
+@RequestMapping("api/v1/users")
+public class FindUserByNameController {
 
     private final FindUserByName uServ;
 

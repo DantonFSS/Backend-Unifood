@@ -1,16 +1,15 @@
-package Root.Modules.UserModel.infra.http.controller;
+package Root.modules.UserModel.infra.http.controller;
 
-import Root.Modules.UserModel.database.entity.UserModel;
-import Root.Modules.UserModel.domain.services.UpdateUserService;
+import Root.modules.UserModel.database.entity.UserModel;
+import Root.modules.UserModel.domain.services.UpdateUserService;
 import lombok.RequiredArgsConstructor;
-import org.apache.catalina.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/users")
 public class UpdateUserController {
 
     private final UpdateUserService uServ;
