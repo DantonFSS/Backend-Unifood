@@ -1,4 +1,4 @@
-package Root.Modules.AddressModel.database.entity;
+package Root.modules.AddressModel.database.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
