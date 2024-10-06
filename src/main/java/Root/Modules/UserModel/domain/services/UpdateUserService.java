@@ -1,13 +1,12 @@
-package Root.Modules.UserModel.domain.services;
+package Root.modules.UserModel.domain.services;
 
-import Root.Modules.UserModel.database.entity.UserModel;
-import Root.Modules.UserModel.database.repository.UserRepository;
-import Root.Modules.UserModel.domain.exceptions.CpfDoNotMatchesException;
-import Root.Modules.UserModel.domain.exceptions.UserNotFound;
+import Root.exceptions.HttpBadRequestException;
+import Root.exceptions.HttpNotFoundException;
+import Root.modules.UserModel.database.entity.UserModel;
+import Root.modules.UserModel.database.repository.UserRepository;
+import Root.shared.common.utils.consts.UserErrorConstants;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -18,10 +17,10 @@ public class UpdateUserService {
 
     public UserModel update(String cpf, UserModel user) {
         if (user.getCpf() == null || cpf.isEmpty()) {
-            throw new UserNotFound("");
+            throw new HttpNotFoundException(UserErrorConstants.USER_NOT_FOUND);
         }
         if (!cpf.matches("^([0-9]{3}\\.[0-9]{3}\\.[0-9]{3}-[0-9]{2})$")) {
-            throw new CpfDoNotMatchesException("");
+            throw new HttpBadRequestException(UserErrorConstants.CPF_DOES_NOT_MATCH);
         }
         return uRepo.save(user);
     }

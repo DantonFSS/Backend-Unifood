@@ -1,9 +1,9 @@
-package Root.Modules.UserModel.domain.services;
+package Root.modules.UserModel.domain.services;
 
-import Root.Modules.UserModel.database.entity.UserModel;
-import Root.Modules.UserModel.database.repository.UserRepository;
-import Root.Modules.UserModel.domain.exceptions.UserHasNullNameException;
-import Root.Modules.UserModel.domain.exceptions.UserNotFound;
+import Root.exceptions.HttpBadRequestException;
+import Root.modules.UserModel.database.entity.UserModel;
+import Root.modules.UserModel.database.repository.UserRepository;
+import Root.shared.common.utils.consts.UserErrorConstants;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,9 +19,9 @@ public class FindUserByName {
             if (user != null) {
                 return user;
             } else {
-                throw new UserNotFound("");
+                throw new HttpBadRequestException(UserErrorConstants.USER_NOT_FOUND);
             }
         }
-        throw new UserHasNullNameException("");
+        throw new HttpBadRequestException(UserErrorConstants.USER_NAME_NOT_FOUND);
     }
 }

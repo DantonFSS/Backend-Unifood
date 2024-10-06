@@ -1,7 +1,7 @@
-package Root.Modules.UserModel.domain.services;
+package Root.modules.UserModel.domain.services;
 
-import Root.Modules.UserModel.database.entity.UserModel;
-import Root.Modules.UserModel.database.repository.UserRepository;
+import Root.modules.UserModel.database.entity.UserModel;
+import Root.modules.UserModel.database.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
