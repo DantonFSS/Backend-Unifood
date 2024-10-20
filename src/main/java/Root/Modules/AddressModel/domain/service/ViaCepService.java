@@ -1,6 +1,6 @@
-package Root.Modules.AddressModel.domain.service;
+package Root.modules.AddressModel.domain.service;
 
-import Root.Modules.AddressModel.database.entity.AddressModel;
+import Root.modules.AddressModel.database.entity.AddressModel;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
