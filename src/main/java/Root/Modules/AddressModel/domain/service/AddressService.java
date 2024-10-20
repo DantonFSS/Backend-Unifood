@@ -1,4 +1,5 @@
-package Root.Modules.AddressModel.domain.service;
+package Root.modules.AddressModel.domain.service;
 
 public class AddressService {
+
 }
