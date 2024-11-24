@@ -13,22 +13,38 @@
 
 <h2 id="technologies">💻 Tecnologias </h2>
 
-- Docker
-- Java - Framework SpringBoot
-- PostgresSQL
-- Git
-
+- ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+- ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
+- ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
+- ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+- ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+- ![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)
+- ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 <h2 id="started">🚀 Iniciando</h2>
 
 ## Rodando o projeto localmente:
 
-<h3>Prerequisites</h3>
+<h3>Prerequisitos</h3>
 
-- [Ide Intellij IDEA](https://www.jetbrains.com/pt-br/idea/download/?section=windows)![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)
-- ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
-- [Docker desktop instalado no seu sistema!](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-win-amd64).
-- Virtualização permitida na BIOS. Procure pela configuração de CPU, e ative a virtualização de hardware.
+- [Intellij](https://www.jetbrains.com/pt-br/idea/download/?section=windows)
+- [Docker desktop instalado no seu sistema!](https://docs.docker.com/get-started/get-docker/).
 - [Git instalado.](https://git-scm.com/downloads)
+- [JDK Versão 17 ou maior!](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+- Virtualização permitida na BIOS. Procure pela configuração de CPU, e ative a virtualização de hardware.
+
+
+:construction: :construction: :construction: :construction:
+<h3>Requisitos opcionais</h3>
+Caso queira poder visualizar com acesso direto ao pqsl...
+
+- [Postgres](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
+
+Talvez este comando faça issoooooo 
+(a senha padrão é 'postgres')
+```bash
+docker run -it --rm postgres:latest psql -h host.docker.internal -U postgres -d postgres
+```
+:construction: :construction: :construction: :construction:
 
 <h3> Clonando a aplicação <h3>
 No github, na pagina da aplicação, clique em:
@@ -86,7 +102,7 @@ Certifique-se de que a virtualização está habilitada na BIOS/UEFI.
 
 <h3>Instalando o Docker engine</h3>
 
-Siga o processo normal do installer...
+Siga o processo normal do instalador...
 
 ## Lembre-se de deixar a opção "Use wsl2 instead of hyper-v (recommended)" selecionada.
 
@@ -102,81 +118,21 @@ deve aparacer...
 
 <h3>Criando e configurando .env variables</h2>
 
-No diretório principal '.../growup_mb/', siga:
-![image](https://github.com/user-attachments/assets/f38dea79-3fa6-45ed-8afa-e71bbdbe1759)
+No diretório principal '.../Backend-Unifood/', siga:
+![image](https://github.com/user-attachments/assets/c03659a3-d3ac-4e1b-9644-76de7370076b)
 
-Clicando com o botão direito -> Novo arquivo
-![image](https://github.com/user-attachments/assets/e982a533-0451-4bfe-93e6-a560a8a73537)
+Clicando com o botão direito -> Novo arquivo (New file)
+![image](https://github.com/user-attachments/assets/31e55bae-c5f1-4d8d-ad79-7f5b5a84e6c1)
 
 Nomeie-o '.env'
-![image](https://github.com/user-attachments/assets/540c450f-bce9-45ea-a16e-f9bb956edddd)
-
-<h3>Intalando os requirements</h3>
-
-## Agora no terminal do proprio VS_Code, ele ja deve reconhecer com o terminal do Ubuntu...
-
-algo como:
-seu_usuario@DESKTOP-AUCS77G:~/mosca/growup_mb$ 
-
-digite: 
-
-```bash
-sudo nano /etc/resolv.conf
-```
-## adicione as seguintes linhas:
-
-```bash
-nameserver 8.8.8.8
-nameserver 8.8.4.4
-```
-
-Então pressione:
-`CTRL + X` -> `y` -> `Enter`
-
-```bash
-sudo systemctl restart networking
-```
-
-Reinicie o Ubuntu.
-
-Copie e cole os seguintes comandos:
-Atualiza.
-```bash
-sudo apt-get update
-```
-```bash
-sudo apt-get upgrade
-```
-
-Instala a engine python necessaria para o venv (v)irtual(env)ironment
-```bash
-sudo apt install python3.12-venv
-```
-Cria o venv
-```bash
-python3 -m venv venv
-```
-
-Instala dependências necessarias para o funcionamento
-```bash
-pip install -r requirements.txt
-```
-```bash
-pip install numpy
-```
-
-Por fim, ativa o venv.
-```bash
-source venv/bin/activate
-```
+![image](https://github.com/user-attachments/assets/3acd02c4-b030-4bf8-8e38-04e02342c8cd)
 
 Agora insira as credenciais do banco no seu `.env`.
 ```yaml
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
-POSTGRES_DB=dev
-POSTGRES_HOST=localhost
-POSTGRES_PORT=5432
+POSTGRES_DB=develop
+DATABASE_PORT=5432
 ```
 
 <h3>Rodando a aplicação</h3>
@@ -186,35 +142,10 @@ Sobe o container do banco.
 ```bash
 sudo docker compose up -d
 ```
-Instala o pacote para instalação do cliente postgres.
-```bash
-sudo apt install postgresql-client-common
-```
-Instala o cliente do postgres.
-```bash
-sudo apt-get install postgresql-client
-```
-Acessa o cliente disponivel no container rodando.
-```bash
-psql -h localhost -U postgres -d postgres
-```
-(a senha padrão é 'postgres')
 
-<h3>Populando nossa base de dados</h3>
-
-Primeiro, criaremos o esquema com o qual iremos trabalhar:
-```bash
-CREATE SCHEMA dev;
-```
-
-Comando para utilizar o schema criado.
-```bash
-\c dev
-```
+<h3>Acessando à documentação </h3>
+Após rodar a aplicação, acesse:
 
 ```bash
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+http://localhost:8080/swagger-ui/index.html#/
 ```
-
-A partir daqui, utilize-se dos scripts sql no arquivo script.txt para criar as tabelas e relacionamento...
-É necessario que crie na ordem (de cima a baixo) estabelecida no arquivo...
