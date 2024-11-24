@@ -1,6 +1,6 @@
 package Root.modules.items.domain.services;
 
-import Root.exceptions.HttpBadRequestException;
+import Root.shared.common.utils.exceptions.HttpBadRequestException;
 import Root.modules.items.database.entity.ItemModel;
 import Root.modules.items.database.repository.ItemRepository;
 import Root.shared.common.utils.consts.ItemErrorConstants;
