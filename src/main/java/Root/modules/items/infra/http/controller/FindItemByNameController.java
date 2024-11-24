@@ -2,6 +2,7 @@ package Root.modules.items.infra.http.controller;
 
 import Root.modules.items.database.entity.ItemModel;
 import Root.modules.items.domain.services.FindItemByName;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Tag(name = "Items", description = "Manage items - Create, Delete, Read and Update any item.")
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/items")
