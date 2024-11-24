@@ -1,4 +1,4 @@
-package Root.exceptions.httpex;
+package Root.shared.common.utils.exceptions.httpex;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude;

@@ -1,7 +1,7 @@
-package Root.exceptions.httpex;
+package Root.shared.common.utils.exceptions.httpex;
 
-import Root.exceptions.HttpBadRequestException;
-import Root.exceptions.HttpNotFoundException;
+import Root.shared.common.utils.exceptions.HttpBadRequestException;
+import Root.shared.common.utils.exceptions.HttpNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

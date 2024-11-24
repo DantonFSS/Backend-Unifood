@@ -1,4 +1,4 @@
-package Root.exceptions;
+package Root.shared.common.utils.exceptions;
 
 public class HttpBadRequestException extends RuntimeException {
     public HttpBadRequestException (String message) {
