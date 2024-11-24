@@ -51,28 +51,24 @@ docker run -it --rm postgres:latest psql -h host.docker.internal -U postgres -d 
 :construction: :construction: :construction: :construction:
 
 <h3> Clonando a aplicação <h3>
-No github, na pagina da aplicação, clique em:
 
-[<> Code] e copie a chave HTTPS para clonar o repositório...
+### Na sua maquina, acesse o DOS (Disk Operating System) e digite os seguintes comandos:
 
-Na sua maquina, acesse o DOS (Disk Operating System) e digite os seguintes comandos:
-
-Navega até o Desktop
+Navegue até o Desktop
 ```bash
 cd Desktop
 ```
-
-Cria diretório
+Crie o diretório
 ```bash
 mkdir <NOME_DO_DIRETÓRIO>
 ```
-
+Navegue até o diretório
 ```bash
 cd <NOME_DO_EXATO_DIRETÓRIO>
 ```
-
+Clone o projeto!
 ```bash
-git clone <link_do_repositório>
+git clone https://github.com/DantonFSS/Backend-Unifood.git
 ```
 
 
