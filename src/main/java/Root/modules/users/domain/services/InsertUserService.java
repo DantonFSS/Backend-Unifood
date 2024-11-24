@@ -1,6 +1,6 @@
 package Root.modules.users.domain.services;
 
-import Root.exceptions.HttpBadRequestException;
+import Root.shared.common.utils.exceptions.HttpBadRequestException;
 import Root.modules.users.database.entity.UserModel;
 import Root.modules.users.database.repository.UserRepository;
 import Root.shared.common.utils.consts.UserErrorConstants;
