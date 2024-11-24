@@ -13,5 +13,4 @@ services:
       - .docker/postgresql/data:/var/lib/postgresql/data
     env_file:
       - .env
-
 # Helpful - docker run -it --rm postgres:latest psql -h host.docker.internal -U postgres -d postgres
