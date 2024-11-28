@@ -108,7 +108,7 @@ Siga o processo normal do instalador...
 
 Para testar o funcionamento:
 ```bash
-sudo docker ps
+docker ps
 ```
 Algo como 
 CONTAINER ID   IMAGE      COMMAND                  CREATED      STATUS       PORTS                                       NAMES
@@ -140,11 +140,16 @@ Rodando o container do banco.
 
 Sobe o container do banco.
 ```bash
-sudo docker compose up -d
+cd .\Backend-Unifood\
+```
+
+```bash
+docker compose up -d
 ```
 
 <h3>Acessando à documentação </h3>
 Após rodar a aplicação, acesse:
+
 
 ```bash
 http://localhost:8080/swagger-ui/index.html#/
