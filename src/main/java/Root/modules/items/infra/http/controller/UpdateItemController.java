@@ -15,7 +15,7 @@ import java.util.UUID;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/items")
-//@CrossOrigin(origins = "http://localhost:8100")
+@CrossOrigin(origins = "http://localhost:8100")
 public class UpdateItemController {
 
     private final UpdateItemService iServ;
