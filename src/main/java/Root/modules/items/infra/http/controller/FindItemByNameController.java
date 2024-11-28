@@ -7,15 +7,13 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "Items", description = "Manage items - Create, Delete, Read and Update any item.")
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/items")
+@CrossOrigin(origins = "*")
 public class FindItemByNameController {
 
     private final FindItemByName iServ;

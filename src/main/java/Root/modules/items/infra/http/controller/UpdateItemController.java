@@ -2,6 +2,7 @@ package Root.modules.items.infra.http.controller;
 
 import Root.modules.items.database.entity.ItemModel;
 import Root.modules.items.domain.services.UpdateItemService;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -14,10 +15,12 @@ import java.util.UUID;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/items")
+@CrossOrigin(origins = "*")
 public class UpdateItemController {
 
     private final UpdateItemService iServ;
 
+    @Operation(summary = "Update a existent item", description = "Resource that can update a existent item")
     @PutMapping("/update/{id}")
     public ResponseEntity<ItemModel> update(@RequestBody ItemModel item, @PathVariable UUID id) {
         return ResponseEntity.status(HttpStatus.CREATED).body(iServ.update(id, item));
