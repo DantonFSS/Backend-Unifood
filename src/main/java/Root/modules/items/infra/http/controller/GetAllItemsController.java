@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/items")
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "*")
 public class GetAllItemsController {
 
     private final GetAllItemsService iServ;

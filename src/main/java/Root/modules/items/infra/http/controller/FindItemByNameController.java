@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/items")
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "http://localhost:8100")
 public class FindItemByNameController {
 
     private final FindItemByName iServ;

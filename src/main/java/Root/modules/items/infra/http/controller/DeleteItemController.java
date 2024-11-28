@@ -13,7 +13,7 @@ import java.util.UUID;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/items")
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "http://localhost:8100")
 public class DeleteItemController {
 
     private final DeleteItemService iServ;
