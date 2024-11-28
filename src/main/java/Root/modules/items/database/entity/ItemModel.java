@@ -44,5 +44,18 @@ public class ItemModel {
     )
     private List<Category> category;
 
+    public ItemModel (String name, Double price, String description, String url) {
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.url = url;
+    }
+
+    public ItemModel (String name, Double price, String description) {
+        this.name = name;
+        this.price = price;
+        this.description = description;
+    }
+
 }
 
