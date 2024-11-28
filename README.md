@@ -50,7 +50,7 @@ docker run -it --rm postgres:latest psql -h host.docker.internal -U postgres -d 
 ```
 :construction: :construction: :construction: :construction:
 
-<h3> Clonando a aplicação <h3>
+<h3> Clonando a aplicação </h3>
 
 ### Na sua maquina, acesse o DOS (Disk Operating System) e digite os seguintes comandos:
 
