@@ -25,19 +25,18 @@ public class UpdateUserController {
     private final UpdateUserService uServ;
 
     @Operation(summary = "Update a existent user", description = "Resource that can update a existent user",
-            responses = {
-                    @ApiResponse(responseCode = "200", description = "User updated successfully",
-                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserResponseDto.class))),
-                    @ApiResponse(responseCode = "404", description = "User not found",
-                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApplicationError.class))),
-                    @ApiResponse(responseCode = "400", description = "Invalid id",
-                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApplicationError.class))),
-                    @ApiResponse(responseCode = "400", description = "Cpf already used",
-                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApplicationError.class)))
-            })
+    responses = {
+        @ApiResponse(responseCode = "200", description = "User updated successfully",
+                content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserResponseDto.class))),
+        @ApiResponse(responseCode = "404", description = "User not found",
+                content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApplicationError.class))),
+        @ApiResponse(responseCode = "400", description = "Invalid id",
+                content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApplicationError.class))),
+        @ApiResponse(responseCode = "400", description = "Cpf already used",
+                content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApplicationError.class)))
+    })
     @PutMapping("/update/{cpf}")
-    public ResponseEntity<UserModel> update(@RequestBody UserModel userModel, @PathVariable UUID id) {
-        UserModel savedUser = uServ.update(id, userModel);
-        return ResponseEntity.status(HttpStatus.CREATED).body(savedUser);
+    public ResponseEntity<UserModel> update(@RequestBody UserModel userModel, @PathVariable String cpf) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(uServ.update(cpf, userModel));
     }
 }
