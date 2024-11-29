@@ -15,11 +15,13 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "Items", description = "Manage items - Create, Delete, Read and Update any item.")
+@Slf4j
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/items")
@@ -56,7 +58,9 @@ public class CreateItemController {
             })
     @PostMapping("/create")
     public ResponseEntity<CreateItemResponseDto> registerItem(@Valid @RequestBody CreateItemDto itemDto) {
+        log.info("Request to create item: {}", itemDto);
         ItemModel itemToCreate = iServ.saveItem(ItemMapper.mappingToItemEntity(itemDto));
+        log.info("Item created successfully with ID: {}", itemToCreate.getId());
         return ResponseEntity.status(HttpStatus.CREATED).body(ItemMapper.mappingToItemResponse(itemToCreate));
     }
 
