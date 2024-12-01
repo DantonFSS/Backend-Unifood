@@ -1,6 +1,12 @@
 
 <h1 align="center" style="font-weight: bold;"> Unifood - Backend 💻</h1>
 
+- 01648278 Andre Carneiro
+- 01648341 Arthur Henrique
+- 01648224 Danton Filipe
+- 01648330 Gabriel Augusto
+- 01648029 Victor Gabriel
+
 <p align="center">
  <a href="#tech">Tecnologias</a> • 
  <a href="#started">Iniciando</a> • 
