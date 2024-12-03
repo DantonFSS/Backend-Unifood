@@ -160,3 +160,25 @@ Após rodar a aplicação, acesse:
 ```bash
 http://localhost:8080/swagger-ui/index.html#/
 ```
+
+<h2> PARA DROPAR O BANCO  </h2>
+
+```bash
+SELECT pid, usename, datname, client_addr, state 
+FROM pg_stat_activity 
+WHERE datname = 'develop';
+```
+
+```bash
+SELECT pg_terminate_backend(pid)
+FROM pg_stat_activity
+WHERE datname = 'develop';
+
+```
+por fim: 
+
+
+```bash
+DROP DATABASE develop;
+```
+
